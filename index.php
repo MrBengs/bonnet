@@ -20,6 +20,23 @@ function tva($prix)
     return $prix;
 }
 
+function displayProduct($key, $value)
+{ ?>
+    <tr>
+        <td><?= "{$key}" ?></td>
+        <td><?= tva($value['prix']) ?>€</td>
+        <td <?php if ($value['prix'] < 12) {
+                echo 'class=text-success';
+            } else {
+                echo 'class=text-primary';
+            }
+            ?>>Prix:<?= $value['prix'] ?>€</td>
+
+        <td>description:<?= $value['description'] ?></td>
+    </tr>
+<?php
+}
+
 ?>
 
 
@@ -40,20 +57,7 @@ function tva($prix)
         <table class="table table-dark table-bordered border-secondary table-striped table-hover">
             <?php
             foreach ($bonnets as $key => $value) {
-            ?>
-                <tr>
-                    <td><?= "{$key}" ?></td>
-                    <td><?= tva($value['prix']) ?>€</td>
-                    <td <?php if ($value['prix'] < 12) {
-                            echo 'class=text-success';
-                        } else {
-                            echo 'class=text-primary';
-                        }
-                        ?>>Prix:<?= $value['prix'] ?>€</td>
-
-                    <td>description:<?= $value['description'] ?></td>
-                </tr>
-            <?php
+                displayProduct($key, $value);
             }
             ?>
         </table>
