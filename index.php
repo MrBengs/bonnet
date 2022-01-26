@@ -1,45 +1,5 @@
-<?php
-
-$bonnets = [
-    "Bonnet en laine" =>
-    ["prix" => 10, "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a leo diam. Quisque lorem orci, accumsan quis dolor sed, gravida."],
-
-    "Bonnet en laine bio" =>
-    ["prix" => 14, "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a leo diam. Quisque lorem orci, accumsan quis dolor sed, gravida."],
-
-    "Bonnet en laine et cachemire" =>
-    ["prix" => 20, "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a leo diam. Quisque lorem orci, accumsan quis dolor sed, gravida."],
-
-    "Bonnet arc-en-ciel" =>
-    ["prix" => 12, "description" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a leo diam. Quisque lorem orci, accumsan quis dolor sed, gravida."]
-];
-
-function tva($prix)
-{
-    $prix = $prix * (1 - 0.20);
-    return $prix;
-}
-
-function displayProduct($key, $value)
-{ ?>
-    <tr>
-        <td><?= "{$key}" ?></td>
-        <td><?= tva($value['prix']) ?>€</td>
-        <td <?php if ($value['prix'] < 12) {
-                echo 'class=text-success';
-            } else {
-                echo 'class=text-primary';
-            }
-            ?>>Prix:<?= $value['prix'] ?>€</td>
-
-        <td>description:<?= $value['description'] ?></td>
-    </tr>
-<?php
-}
-
-?>
-
-
+<?php include('functions.php'); ?>
+<?php include('variables.php'); ?>
 
 <!DOCTYPE html>
 <html lang="en">
