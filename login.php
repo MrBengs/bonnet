@@ -1,4 +1,5 @@
-<?php require_once('includes/header.php'); ?>
+<?php require_once('includes/header.php'); 
+?>
 
 
 <div class="container-fluid bg-light vh-100 bg-dark d-flex">
@@ -8,7 +9,7 @@
         </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Identifiant</label>
-            <input type="email" name="id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="email" name="id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
             <div id="emailHelp" class="form-text">Indiquez l'adresse mail avec laquelle vous vous êtes inscrit.</div>
         </div>
         <div>
@@ -18,8 +19,20 @@
         <div class="mb-5 justify-content-end">
             <p><a href="#" role="button">Mot de passe oublié</a></p>
         </div>
+
+
+        <?php 
+        if($_POST['password'] != $password){
+            ?><div class="alert alert-danger" role="alert">
+                Mot de passe incorrect
+                  </div><?php 
+            }
+                ?>
+
+
+
         <button type="submit" name="buttonAccess" class="btn btn-primary">Valider</button>
     </form>
 </div>
 
-<?php require_once('includes/footer.php'); ?>
+ <?php require_once('includes/footer.php'); ?>

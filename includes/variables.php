@@ -1,5 +1,8 @@
 
 <?php
+
+$password = "toto";
+
 $bonnets = [
     "Bonnet en laine" =>
     [
