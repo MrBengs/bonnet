@@ -1,5 +1,11 @@
-<?php require_once('includes/functions.php'); ?>
-<?php require_once('includes/variables.php'); ?>
+<?php
+session_start();
+if (isset($_POST['id'])) {
+    $_SESSION['login'] = $_POST['id'];
+}
+require_once('includes/functions.php');
+require_once('includes/variables.php');
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,12 +21,14 @@
 
 </head>
 
+
+
 <body>
     <ul class="nav justify-content-end mb-3">
         <?php
-        if (isset($_POST['id'])) {
+        if (isset($_SESSION['login'])) {
         ?>
-            <li class="nav-item">Bienvenue <?= $_POST['id']; ?></li>
+            <li class="nav-item">Bienvenue <?= $_SESSION['login']; ?></li>
         <?php
         }
         ?>
