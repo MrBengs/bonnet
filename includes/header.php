@@ -3,6 +3,10 @@ session_start();
 if (isset($_POST['id'])) {
     $_SESSION['login'] = $_POST['id'];
 }
+if (!empty($_GET['disconnected'])&& $_GET['disconnected']==1){
+    ?><div>Vous êtes déconnecté</div>
+    <?php
+}
 require_once('includes/functions.php');
 require_once('includes/variables.php');
 ?>
