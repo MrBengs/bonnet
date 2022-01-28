@@ -3,9 +3,9 @@ session_start();
 if (isset($_POST['id'])) {
     $_SESSION['login'] = $_POST['id'];
 }
-if (!empty($_GET['disconnected'])&& $_GET['disconnected']==1){
-    ?><div>Vous êtes déconnecté</div>
-    <?php
+if (!empty($_GET['disconnected']) && $_GET['disconnected'] == 1) {
+?><div>Vous êtes déconnecté</div>
+<?php
 }
 require_once('includes/functions.php');
 require_once('includes/variables.php');
@@ -37,9 +37,9 @@ require_once('includes/variables.php');
         }
         ?>
         <li class="nav-item">
-            <a class="nav-link" href="index.php">Acceuil</a>
+            <a class="nav-link" href="?page=home">Acceuil</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="list.php">List</a>
+            <a class="nav-link" href="?page=list">List</a>
         </li>
     </ul>
