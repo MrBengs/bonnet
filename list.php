@@ -1,5 +1,4 @@
-<?php require_once('includes/functions.php'); ?>
-<?php require_once('includes/variables.php'); ?>
+
 <?php require_once('includes/header.php'); ?>
 
 
