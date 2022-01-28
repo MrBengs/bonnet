@@ -16,11 +16,23 @@ function displayProduct($key, $value)
             } else {
                 echo 'class=text-primary';
             }
-            ?>>Prix:<?= $value['prix'] ?>€</td>
+            ?>><?= $value['prix'] ?>€</td>
 
-        <td>description:<?= $value['description'] ?></td>
+        <td><?= $value['description'] ?></td>
     </tr>
+
 <?php
 }
 
-?>
+
+function displayCards($name, $value)
+{ ?>
+    <div class="card mx-2 my-auto" style="width: 18rem;">
+        <img src="<?= $value['image'] ?>" class="card-img-top" style="height: 10rem;">
+        <div class=" card-body">
+            <h5 class="card-title"><?= $name ?></h5>
+            <p class="card-text"><?= $value['description'] ?></p>
+            <a href="#" class="btn btn-primary">Ajouter au panier</a>
+        </div>
+    </div>
+<?php }
