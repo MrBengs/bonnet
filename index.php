@@ -1,17 +1,11 @@
-<?php require_once('includes/header.php'); ?>
+<?php
+require_once('includes/header.php');
 
+$page = "home";
+if (isset($_GET['page'])) {
+    $page = $_GET['page'];
+}
 
-<div class="container-fluid bg-light d-flex">
-    <?php
-    foreach (array_slice($bonnets, 0, 3, true) as $name => $value) {
-        displayCards($name, $value);
-    }
-    ?>
+include_once 'pages/' . $page . '.php';
 
-</div>
-<div class="container-fluid bg-light">
-    <a class="btn btn-outline-primary mt-5 ms-2" href="list.php" role="button">List</a>
-</div>
-
-
-<?php require_once('includes/footer.php'); ?>
+require_once('includes/footer.php');

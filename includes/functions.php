@@ -19,6 +19,7 @@ function displayProduct($key, $value)
             ?>><?= $value['prix'] ?>€</td>
 
         <td><?= $value['description'] ?></td>
+        <td><a class="btn btn-outline-primary" role="button" href="?page=panier">Ajouter au panier</a></td>
     </tr>
 
 <?php

@@ -1,7 +1,3 @@
-<?php require_once('includes/header.php'); 
-?>
-
-
 <div class="container-fluid bg-light vh-100 bg-dark d-flex">
     <form action="" method="POST" class="text-light col-4 offset-4 my-auto border-light d-flex flex-column">
         <div class="mx-auto">
@@ -21,18 +17,16 @@
         </div>
 
 
-        <?php 
-        if($_POST['password'] != $password){
-            ?><div class="alert alert-danger" role="alert">
+        <?php
+        if ($_POST['password'] != $password) {
+        ?><div class="alert alert-danger" role="alert">
                 Mot de passe incorrect
-                  </div><?php 
-            }
-                ?>
+            </div><?php
+                }
+                    ?>
 
 
 
         <button type="submit" name="buttonAccess" class="btn btn-primary">Valider</button>
     </form>
 </div>
-
- <?php require_once('includes/footer.php'); ?>

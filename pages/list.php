@@ -1,8 +1,3 @@
-
-<?php require_once('includes/header.php'); ?>
-
-
-
 <div class="container-fluid col-8 d-flex">
     <table class="table table-light table-bordered table-striped table-hover border-dark">
         <thead class="table-dark">
@@ -14,15 +9,11 @@
             </tr>
         </thead>
         <tbody>
-        <?php
-        foreach ($bonnets as $key => $value) {
-            displayProduct($key, $value);
-        }
-        ?>
+            <?php
+            foreach ($bonnets as $key => $value) {
+                displayProduct($key, $value);
+            }
+            ?>
         </tbody>
     </table>
 </div>
-
-
-
-<?php require_once('includes/footer.php'); ?>

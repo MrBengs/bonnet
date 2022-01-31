@@ -37,9 +37,9 @@ require_once('includes/variables.php');
         }
         ?>
         <li class="nav-item">
-            <a class="nav-link" href="?page=home">Acceuil</a>
+            <a class="nav-link" href="index.php?page=home">Acceuil</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="?page=list">List</a>
+            <a class="nav-link" href="index.php?page=list">List</a>
         </li>
     </ul>
