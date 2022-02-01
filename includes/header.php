@@ -37,9 +37,18 @@ require_once('includes/variables.php');
         }
         ?>
         <li class="nav-item">
-            <a class="nav-link" href="index.php?page=home">Acceuil</a>
+            <a class="nav-link link-dark" href="index.php?page=home">Acceuil</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="index.php?page=list">List</a>
+            <a class="nav-link link-dark" href="index.php?page=list">List</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link link-dark btn btn-outline-info" href="index.php?page=panier">Panier</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link link-dark" href="index.php?page=login">Log In</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link  link-dark" href="index.php?page=logout">Log Out</a>
         </li>
     </ul>

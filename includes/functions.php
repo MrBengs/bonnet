@@ -6,7 +6,7 @@ function tva($prix)
     return $prix;
 }
 
-function displayProduct($key, $value)
+function displayProduct($key, $value, $displayButton = true)
 { ?>
     <tr>
         <td><?= "{$key}" ?></td>
@@ -19,7 +19,7 @@ function displayProduct($key, $value)
             ?>><?= $value['prix'] ?>€</td>
 
         <td><?= $value['description'] ?></td>
-        <td><a class="btn btn-outline-primary" role="button" href="?page=panier">Ajouter au panier</a></td>
+        <td><a class="btn btn-outline-success" role="button" href="?page=panier&key=<?= $key; ?>">Ajouter au panier</a></td>
     </tr>
 
 <?php
@@ -33,7 +33,7 @@ function displayCards($name, $value)
         <div class=" card-body">
             <h5 class="card-title"><?= $name ?></h5>
             <p class="card-text"><?= $value['description'] ?></p>
-            <a href="#" class="btn btn-primary">Ajouter au panier</a>
+            <a href="?page=panier&key=<?= $name; ?>" class="btn btn-primary">Ajouter au panier</a>
         </div>
     </div>
 <?php }

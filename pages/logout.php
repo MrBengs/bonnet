@@ -1,1 +1,3 @@
-<php session_destroy(); header("Location: index.php?disconnected=1"); ?>
+<?php 
+session_start();
+session_destroy(); header("Location: index.php?disconnected=1"); ?>

@@ -6,6 +6,7 @@
                 <th scope="col">Prix HT</th>
                 <th scope="col">Prix TTC</th>
                 <th scope="col">Description</th>
+                <th scope="col"><i class="fas fa-shopping-cart"></i></th>
             </tr>
         </thead>
         <tbody>
