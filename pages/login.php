@@ -18,7 +18,7 @@
 
 
         <?php
-        if ($_POST['password'] != $password) {
+        if (isset($_POST['password']) && $_POST['password'] != $password) {
         ?><div class="alert alert-danger" role="alert">
                 Mot de passe incorrect
             </div><?php

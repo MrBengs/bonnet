@@ -1,39 +1,41 @@
 <?php
 
-function tva($prix)
+require_once('classes/bonnet.class.php');
+
+function tva(Bonnet $bonnet)
 {
-    $prix = $prix * (1 - 0.20);
+    $prix = $bonnet->getPrix() * (1 - 0.20);
     return $prix;
 }
 
-function displayProduct($key, $value, $displayButton = true)
+function displayProduct(Bonnet $bonnet, $displayButton = true)
 { ?>
     <tr>
-        <td><?= "{$key}" ?></td>
-        <td><?= tva($value['prix']) ?>€</td>
-        <td <?php if ($value['prix'] < 12) {
+        <td><?= $bonnet->getNom() ?></td>
+        <td><?= tva($bonnet) ?>€</td>
+        <td <?php if ($bonnet->getPrix() < 12) {
                 echo 'class=text-success';
             } else {
                 echo 'class=text-primary';
             }
-            ?>><?= $value['prix'] ?>€</td>
+            ?>><?= $bonnet->getPrix() ?>€</td>
 
-        <td><?= $value['description'] ?></td>
-        <td><a class="btn btn-outline-success" role="button" href="?page=panier&key=<?= $key; ?>">Ajouter au panier</a></td>
+        <td><?= $bonnet->getDescription() ?></td>
+        <td><a class="btn btn-outline-success" role="button" href="?page=panier&key=<?= $bonnet->getNom() ?>&operation=plus">Ajouter au panier</a></td>
     </tr>
 
 <?php
 }
 
 
-function displayCards($name, $value)
+function displayCards(Bonnet $bonnet)
 { ?>
     <div class="card mx-2 my-auto" style="width: 18rem;">
-        <img src="<?= $value['image'] ?>" class="card-img-top">
+        <img src="<?= $bonnet->getImage() ?>" class="card-img-top">
         <div class=" card-body">
-            <h5 class="card-title"><?= $name ?></h5>
-            <p class="card-text"><?= $value['description'] ?></p>
-            <a href="?page=panier&key=<?= $name; ?>" class="btn btn-primary">Ajouter au panier</a>
+            <h5 class="card-title"><?= $bonnet->getNom() ?></h5>
+            <p class="card-text"><?= $bonnet->getDescription() ?></p>
+            <a href="?page=panier&key=<?= $bonnet->getNom(); ?>&operation=plus" class="btn btn-primary">Ajouter au panier</a>
         </div>
     </div>
 <?php }
