@@ -12,7 +12,7 @@
         <tbody>
             <?php
             foreach ($bonnets as $key => $value) {
-                displayProduct($key, $value);
+                displayProduct($value);
             }
             ?>
         </tbody>

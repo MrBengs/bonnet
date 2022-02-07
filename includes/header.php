@@ -9,6 +9,7 @@ if (!empty($_GET['disconnected']) && $_GET['disconnected'] == 1) {
 }
 require_once('includes/functions.php');
 require_once('includes/variables.php');
+require_once('classes/bonnet.class.php');
 ?>
 
 <!DOCTYPE html>

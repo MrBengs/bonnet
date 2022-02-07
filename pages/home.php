@@ -1,7 +1,7 @@
 <div class="container-fluid bg-light d-flex">
     <?php
     foreach (array_slice($bonnets, 0, 3, true) as $name => $value) {
-        displayCards($name, $value);
+        displayCards($value);
     }
     ?>
 
